@@ -791,7 +791,7 @@ protected NumberSuffix
         ;
     
 Number
-        :       ( ('-')? ( Digit )+ ( '.' | 'e' | 'E' ) )=> ('-')? ( Digit )+
+        :       ( ( Digit )+ ( '.' | 'e' | 'E' ) )=> ( Digit )+
                 ( '.' ( Digit )* ( Exponent )?
                 | Exponent
                 ) 
@@ -811,7 +811,7 @@ Number
                 ( NumberSuffix
                 )*
 
-        |       ('-')? '1'..'9' ( Digit )*     
+        |       '1'..'9' ( Digit )*
                 ( NumberSuffix
                 )*
 
